@@ -1,0 +1,6 @@
+Scripting Assignment :  
+1. Write a shell script revers  the string.
+2. ⁠write a shell script get the servers details host name. Ip address, and os details . 
+3. ⁠write a shell script to get the server disk size details, if the disk size is more than 80% it should send e mail. 
+4. ⁠get information from Jason file ( read the json file) and get the names ,age and branch details.
+5. ⁠write a script to get the EC2 and s3 details from aws account  in Us-east-1 region in a file.
