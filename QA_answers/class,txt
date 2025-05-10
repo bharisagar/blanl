@@ -1,0 +1,202 @@
+Notes on 02/05/2025
+
+
+boolean opeartors
+
+|| ----> OR_if
+&& ----> and_if 
+
+Loops: 
+
+	if, elif, else, while, for, case, functions
+	
+#if loop is used to check the condition and execute the statement if the condition is true.
+1. if: 
+	if [condition]; then
+		echo "statement"
+	fi 
+	
+	e.g : if [ $file_size -eq 4 ]; then
+			echo "the above file size id 4kb"
+		  fi
+
+2. else: # it is used to execute the statement if the condition is false.
+	if [condition-1]; the 
+		echo "statement-1"
+	else 
+		echo"statement-2"
+	fi 
+	
+	e.g : if [ $file_size -eq 4 ]; then 
+			echo "the file size is 4kb"
+		  else 
+			echo "the file size is not 4kb"
+		  fi
+		  
+3. elif: # it is used to check multiple conditions.
+	if [condition-1]; then 
+		echo "statement-1"
+	elif [condition-2]; the 
+		echo "statement-2"
+	else 
+		echo "statement-3"
+	fi 
+	
+	e.g : if [ $color = red ]; then
+			echo "the color is red"
+		  elif [ $color = black ]; then 
+		    echo "the color is black"
+		  else 
+		    echo "the color is green"
+		  fi
+		  
+4. while: it will read the program/script line by line untill and unless the condition true.
+
+		while [condition]; do 
+			echo "statement"
+		done
+		
+		e.g: while [ $file_size -eq 7 ]; do 
+				echo "the file size is 7"
+			 done
+			 
+5. for : # it is used to iterate the list of items.
+
+		for i in name; do
+			echo "statement"
+		done
+		
+		e.g :for i in 3 4 7 6 8; do 
+				echo $i
+			 done 
+			 
+
+scripts:
+1.
+#!/bin/bash
+
+num=10
+
+if [ $num -gt 5 ]; then
+        echo "$num is greater than 4"
+fi
+
+2.
+#!/bin/bash
+
+file="test.txt"
+
+if [ -f "$file" ]; then
+        echo "$file is exist"
+else
+        echo "$file does not exist"
+fi
+
+3.
+#!/bin/bash
+
+file="test.txt"
+
+if [ -f "$file" ]; then
+        echo "$file is exist"
+else
+        touch test.txt > file.txt
+fi
+
+4.
+#!/bin/bash
+
+num=3
+
+if [ $num -gt 5 ]; then
+        echo "$num is greater than 5"
+else 
+		echo "$num is not greater than 5"
+fi
+
+
+5. 
+#!/bin/bash
+
+num=5
+
+if [ $num -gt 5 ]; then
+        echo "$num is greater than 5"
+elif [ $num -eq 5 ]; then
+		echo "$num is equals 5"
+else
+        echo "$num is less than 5"
+fi
+
+-----------------------------------------
+10-05-2025
+echo "all the agruments are :"
+for arg in $@; do
+	echo $arg
+done
+------------------------------------------
+until loop: in bash, the until is used to excuite a block of command untill a certain condition becomes true.
+# it is the opposite of while loop.
+# until [condition]; do
+# 	echo "statement"
+# done
+# e.g: until [ $num -eq 5 ]; do
+# 	echo "the number is not equal to 5"
+# done
+------------------------------------------- 
+filename="file.txt"
+until [ -f $filename ]; do
+	echo "searching for $filename....."
+	sleep 2
+done
+echo "$filename is found"
+-------------------------------------------
+#count missing files
+#!/bin/bash
+required_files=("file1.txt" "file2.log" "file3.csv")
+missing_count=0
+echo "Checking for required files..."
+for file in "${required_files[@]}"; do
+	if [[ -f "$file" ]]; then
+		echo "$file is exists."
+	else
+		echo "$file is missing."
+		# Increment the missing count
+		((missing_count++))
+	fi
+done
+if [ $missing_count -gt 0 ]; then
+	echo "$missing_count files are missing."
+	until [ $missing_count -eq 0 ]; do
+		missing_count=0
+		sleep 2
+		for file in "${required_files[@]}"; do
+			if [[ ! -f "$file" ]]; then
+				((missing_count++))
+			fi
+	done
+	echo " still missing $missing_count files..... "
+	done
+else
+	echo "All required files are present."
+fi
+i=0
+while [ $i -lt $required_files[@] ]; do
+	file=${required_files[$i]}
+	case $file in
+		*.txt)
+			echo "processing text file : $file"
+			;;
+		*.log)
+			echo "processing log file : $file"
+			;;
+		*.csv)
+			echo "processing csv file : $file"
+			;;
+		*)
+			echo "unknown file type : $file"
+			;;
+	esac
+	((i++))
+done
+-------------------------------------------

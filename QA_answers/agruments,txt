@@ -1,0 +1,64 @@
+#!/bin/bash  --- shebang 
+
+echo $SHELL --- it shows default shell 
+
+c - shell
+k - shell 
+b - shell 
+
+.sh --> ends with .sh extension for shell scripting files.
+
+1. sh script.sh 
+2. ./ script.sh 
+3. bash script.sh
+
+$ --> arguments are using in scripting 
+$1 --> it represents first argument of scripting 
+$2 --> second argument of scripting
+$# --> total number of arguments are passes to a script #example: $1 $2 $3
+$* --> All the arguments are passes to script #example: $* = $1 $2 $3
+$@ --> All the arguments are passes to script and it stores in array format. #example: $@ = $1 $2 $3
+$? ---> it used to check the status of last executed command.
+   if 0 --- success 
+   if non zero --- failure
+$$ --> Process ID if current running process 
+$! --> PID of last executed command went into background.
+$0 ---> this represents name of the script 
+
+Numeric comparison with operators(Numbers)
+-eq --- equals to
+-ne --- not equals to
+-gt --- greater than
+-lt --- less than 
+-le --- less than or equals to  
+
+e.g file_size = 25mb (variable)
+		$file_size -lt 25 --- 25mb -lt 60  
+		$file_size -eq 25 
+		$file_size -ne 25  
+
+String comparison with operators (string/word)
+== ---> equals 
+!= ---> not equals to 
+> ----> greater than 
+>= ---> greater than or equals to 
+< ----> less than 
+<= ----> less than or equals to 
+
+e.g name = file (Variable)
+     $name == file
+	 $name != file 
+	 $name <= file 
+	 
+& (ampersand) --- this is used to run the script in background 
+  e.g ./script.sh & 
+      sh script.sh &
+	  bash script.sh &   
+
+fg PID ---> this is used to have the script status in foreground
+
+nohup (nohang up) : nohup defines during script execution, if we found any network
+                    issues it will stop the execution, once the network is back it resumes 
+					the execution, where it stops.
+					
+					e.g: nohup ./script1.sh & > file.txt

@@ -1,0 +1,79 @@
+functions: 
+	combining multiple tasks in a single program/script.
+	
+	syntax: function function_name () {
+				commands/statements
+			}
+			return/call function
+			
+	e.g: #!/bin/bash 
+		 server_status () {
+			result="ping"
+		 }
+		 server_status
+		 echo "$result"
+		 
+Case: 
+	when we have a multiple options during scripting/program we use case.
+	
+	syntax: case $value in 
+			value-1)
+				statement-1
+				;;
+			value-2)
+				statement-2
+				;;
+			value-3)
+				statement-3
+				;;
+			*)
+				statement
+				;;
+			esac 
+			
++%d ----> use to print the date.
++%y ----> use to print the year.
+
+script:
+
+#!/bin/bash
+
+day=$(date +"%a")
+
+case $day in
+        Mon|Tue|Wed|Thu|Fri)
+                echo "Today is thursday"
+        ;;
+        Sat|Sun)
+                echo "Today is weekend"
+        ;;
+        *)
+                echo "The date is not recognized"
+        ;;
+esac
+
+
+scripts:
+
+To print the numbers from 1 to 5 using while loop.
+
+#!/bin/bash
+
+count=1
+
+while [ $count -le 5 ]; do
+        echo "Count is $count"
+        ((count++))
+done
+
+infinite loop using while loop.
+
+#!/bin/bash
+
+while true; do
+        read -p "type 'exit' to stop: " input
+        if [ "$input" = "exit" ]; then
+                break
+        fi
+        echo "The input is: $input"
+done

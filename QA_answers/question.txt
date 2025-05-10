@@ -4,3 +4,30 @@ Scripting Assignment :
 3. ⁠write a shell script to get the server disk size details, if the disk size is more than 80% it should send e mail. 
 4. ⁠get information from Jason file ( read the json file) and get the names ,age and branch details.
 5. ⁠write a script to get the EC2 and s3 details from aws account  in Us-east-1 region in a file.
+-----------------------------------------------------------------------------------
+1. How to troubleshoot the service if it’s stopped.
+2. ⁠how to chcek the connection between two servers and troubleshoot connection issues. 
+3. ⁠Linux servers or OS advantages. 
+4. ⁠how do you check the logs of service. 5.  Load average in Linux servers.
+-----------------------------------------------------------------------------------
+What is the difference between a Network Load Balancer (NLB) and an Application Load Balancer (ALB)?
+When would you use an Application Load Balancer versus a Network Load Balancer?
+What are the features of an Application Load Balancer?
+What do you mean by a sticky session?
+What is cross-zone load balancing?
+How do you configure SSL termination on a Load Balancer using ACM (from HTTP to HTTPS)?
+How do you troubleshoot when an application is not accessible?
+How do you remove a server from a Load Balancer and update it?
+-----------------------------------------------------------------------
+Assignment :
+
+1. write a shell script to read the content of a file line by line using while loop.
+2. write a script to add content into a file using while loop.
+3. write a script to skip the iteration using while loop. 
+4. how to print numbers from 0 to 10 using for loop. 
+5. write a script get all the files with extension of .sh using for loop.
+6. write a script to create a chessboard [black & white] on the screen using for loop.
+7. write a script to generate the password using for loop. 
+8. write a script to get factorial of the number 5. 
+9. write a script the given number is add or even.
+10. write a script to print current year,month, date, time
